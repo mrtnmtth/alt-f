@@ -4,16 +4,16 @@
 #
 #############################################################
 
-E2FSPROGS_VERSION:=1.41.14
+E2FSPROGS_VERSION:=1.46.2
 #E2FSPROGS_VERSION:=1.42 release is too big! (and uclibc needs ftw, +4KB)
 #E2FSPROGS_VERSION:=1.42.13 rootfs too big by 73792 bytes, removing inadyn bigger by 24640
 #E2FSPROGS_VERSION:=1.43.3 rootfs too big by 131136 bytes
 
-E2FSPROGS_SOURCE=e2fsprogs-$(E2FSPROGS_VERSION).tar.gz
-E2FSPROGS_SITE=$(BR2_SOURCEFORGE_MIRROR)/project/e2fsprogs/e2fsprogs/$(E2FSPROGS_VERSION)
+E2FSPROGS_SOURCE=e2fsprogs-$(E2FSPROGS_VERSION).tar.xz
+E2FSPROGS_SITE=$(BR2_KERNEL_MIRROR)/linux/kernel/people/tytso/e2fsprogs/v$(E2FSPROGS_VERSION)
 
 E2FSPROGS_DIR=$(BUILD_DIR)/e2fsprogs-$(E2FSPROGS_VERSION)
-E2FSPROGS_CAT:=$(ZCAT)
+E2FSPROGS_CAT:=$(XZCAT)
 E2FSPROGS_BINARY:=misc/mke2fs
 E2FSPROGS_TARGET_BINARY:=usr/sbin/mke2fs
 LIBUUID_DIR=$(E2FSPROGS_DIR)/lib/uuid/
