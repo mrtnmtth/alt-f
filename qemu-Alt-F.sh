@@ -76,7 +76,5 @@ QEMU_AUDIO_DRV=none qemu-system-arm \
 -hdb qemu-disk-right.img \
 -hdc qemu-disk-usb.img \
 -pflash qemu-flash.img \
--netdev user,id=eth0 -device e1000,netdev=eth0 \
--redir tcp:5555::80 \
--redir tcp:5556::22 \
--redir tcp:5557::443
+-netdev user,id=eth0,hostfwd=tcp::5555-:80,hostfwd=tcp::5556-:22,hostfwd=tcp::5557-:443 \
+-device e1000,netdev=eth0
